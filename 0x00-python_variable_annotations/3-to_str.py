@@ -4,6 +4,6 @@ to_str function
 """
 
 
-def to_str(n: str) -> str:
+def to_str(n: float) -> str:
     """return n params as string"""
     return str(n)
