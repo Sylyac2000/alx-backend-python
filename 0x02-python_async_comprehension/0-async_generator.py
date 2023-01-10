@@ -5,10 +5,11 @@ coroutine named async_generator with no arguments.
 
 import random
 import asyncio
+from typing import Generator
 
 
-async def async_generator():
-    """loop 10 times, each time asynchronously wait 1 second"""
+async def async_generator() -> Generator[float, None, None]:
+    """async_generator coroutine - loop 10 times, each time wait 1 second"""
     n: int = 10
     delay: int = 1
     for i in range(n):
