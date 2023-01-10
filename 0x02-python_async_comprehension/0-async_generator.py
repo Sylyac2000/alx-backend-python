@@ -10,7 +10,6 @@ from typing import Generator
 
 async def async_generator() -> Generator[float, None, None]:
     """async_generator coroutine - loop 10 times, each time wait 1 second"""
-    delay = 1
     for _ in range(10):
-        await asyncio.sleep(delay)
+        await asyncio.sleep(1)
         yield random.uniform(0, 10)
