@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """defining  an async routine called measure_time """
-import random
 import asyncio
+import time
 
 wait_n = __import__('1-concurrent_coroutines').wait_n
 
