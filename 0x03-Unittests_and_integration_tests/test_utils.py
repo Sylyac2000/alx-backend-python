@@ -2,7 +2,7 @@
 """module of unittest for utils
 """
 
-from typing import Mapping, Sequence, Any
+from typing import Tuple, Dict, Union, Any
 import unittest
 from parameterized import parameterized
 from utils import access_nested_map
@@ -15,6 +15,8 @@ class TestAccessNestedMap(unittest.TestCase):
         ({"a": {"b": 2}}, ("a",), {"b": 2}),
         ({"a": {"b": 2}}, ("a", "b"), 2),
     ])
-    def test_access_nested_map(self, nested_map: Mapping,
-                               path: Sequence, expected_result: Any) -> None:
+    def test_access_nested_map(self, nested_map: Dict,
+                               path: Tuple[str],
+                               expected_result: Union[Dict, int]) -> None:
+        """Tests access_nested_map's output."""
         self.assertEqual(access_nested_map(nested_map, path), expected_result)
